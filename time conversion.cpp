@@ -5,16 +5,16 @@ class DurationType
 {
     int iHr, iMn, iSc;
     public:
-    DurationType();
-    DurationType(int);
+   // DurationType();
+    //DurationType(int);
     DurationType(int, int, int);
-    DurationType operator+(const DurationType&);
-    void operator=(int);
-    operator int() const;
+    DurationType operator-(const DurationType&);
+ //   void operator=(int);
+   // operator int() const;
     friend ostream& operator<<(ostream&, const DurationType&);
     friend istream& operator>>(istream&, DurationType&);
 };
-DurationType :: DurationType(int seconds)
+/*DurationType :: DurationType(int seconds)
 {
     iMn = seconds / 60;
     iSc = seconds % 60;
@@ -27,8 +27,8 @@ DurationType :: operator int() const
 {
 	cout << "Class to Basic Type Conversion" << endl;
 	return (iHr*60*60+iMn*60+iSc);
-}
-void DurationType :: operator=(int seconds)
+}*/
+/*void DurationType :: operator=(int seconds)
 {
     iMn = seconds / 60;
     iSc = seconds % 60;
@@ -36,11 +36,11 @@ void DurationType :: operator=(int seconds)
     iMn = iMn % 60;
     cout << "\nOverloaded Assignment\n";
     cout << "Basic to Class type Conversion" << endl;
-}
-DurationType :: DurationType()
+}*/
+/*DurationType :: DurationType()
 {
     iHr = iMn = iSc = 0;
-}
+}*/
 DurationType :: DurationType(int h, int m, int s)
 {
     iHr = h;
@@ -69,7 +69,7 @@ ostream& operator<<(ostream &out, const DurationType &t)
     out << setw(2) << setfill('0') << t.iSc << endl;
     return out;
 }
-DurationType DurationType :: operator+(const DurationType &d2)
+DurationType DurationType :: operator-(const DurationType &d2)
 {
     DurationType d3;
     int hh, mm, ss;
